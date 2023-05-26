@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/26 16:57:19 by zwong             #+#    #+#             */
-/*   Updated: 2023/05/26 16:59:08 by zwong            ###   ########.fr       */
+/*   Created: 2023/05/26 16:57:24 by zwong             #+#    #+#             */
+/*   Updated: 2023/05/26 17:36:27 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-#define ANIMAL_H
+#ifndef DOG_H
+#define DOG_H
 
-#include <string>
-#include <iostream>
-#include <iomanip>
+#include "Animal.hpp"
+#include "Brain.hpp"
 
 #define DEFAULT "\033[39m"
 #define BLACK "\033[30m"
@@ -27,32 +26,24 @@
 #define BLUE "\033[94m"
 #define MAGENTA "\033[35m"
 
-class Animal {
+class Dog : public Animal {
 	public:
 		// Constructors
-		Animal();
-		Animal(std::string type);
-		Animal(const Animal &copy);
-		
-		// Destructor
-		virtual ~Animal();
+		Dog();
+		Dog(const Dog &copy);
+
+		// Destructors
+		~Dog();
 
 		// Operators
-		Animal &operator=(Animal other);
-		void swap(Animal &first, Animal &second);
-
-		// Getters
-		std::string get_type() const;
-
-		// Setters
-		void set_type(std::string type);
+		Dog &operator=(Dog other);
+		void swap(Dog &first, Dog &second);
 
 		// Functions
-		virtual void makeSound() const;
-		// virtual means can be defined in derived class, can work without defining in Animal.cpp
-
-	protected:
-		std::string type_;
+		void makeSound() const;
+	
+	private:
+		Brain *brain_;
 };
 
 #endif

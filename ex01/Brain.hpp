@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/26 16:57:19 by zwong             #+#    #+#             */
-/*   Updated: 2023/05/26 16:59:08 by zwong            ###   ########.fr       */
+/*   Created: 2023/05/26 17:44:48 by zwong             #+#    #+#             */
+/*   Updated: 2023/05/26 17:45:02 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-#define ANIMAL_H
+#ifndef BRAIN_H
+#define BRAIN_H
 
 #include <string>
 #include <iostream>
@@ -27,32 +27,28 @@
 #define BLUE "\033[94m"
 #define MAGENTA "\033[35m"
 
-class Animal {
+class Brain {
 	public:
 		// Constructors
-		Animal();
-		Animal(std::string type);
-		Animal(const Animal &copy);
-		
+		Brain();
+		Brain(const Brain &copy);
+
 		// Destructor
-		virtual ~Animal();
+		virtual ~Brain();
 
 		// Operators
-		Animal &operator=(Animal other);
-		void swap(Animal &first, Animal &second);
+		Brain &operator=(Brain other);
+		void swap(Brain &first, Brain &second);
 
 		// Getters
-		std::string get_type() const;
+		std::string get_idea(unsigned int index) const;
 
 		// Setters
-		void set_type(std::string type);
+		void set_idea(unsigned int index, std::string idea);
 
 		// Functions
-		virtual void makeSound() const;
-		// virtual means can be defined in derived class, can work without defining in Animal.cpp
 
 	protected:
-		std::string type_;
+		std::string *ideas_;
 };
-
 #endif

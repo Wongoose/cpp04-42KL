@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/26 16:57:19 by zwong             #+#    #+#             */
-/*   Updated: 2023/05/26 16:59:08 by zwong            ###   ########.fr       */
+/*   Created: 2023/05/26 16:57:29 by zwong             #+#    #+#             */
+/*   Updated: 2023/05/26 16:57:33 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-#define ANIMAL_H
+#ifndef WRONGWrongAnimal_H
+#define WRONGWrongAnimal_H
 
 #include <string>
 #include <iostream>
@@ -27,19 +27,19 @@
 #define BLUE "\033[94m"
 #define MAGENTA "\033[35m"
 
-class Animal {
+class WrongAnimal {
 	public:
 		// Constructors
-		Animal();
-		Animal(std::string type);
-		Animal(const Animal &copy);
+		WrongAnimal();
+		WrongAnimal(std::string type);
+		WrongAnimal(const WrongAnimal &copy);
 		
 		// Destructor
-		virtual ~Animal();
+		~WrongAnimal();
 
 		// Operators
-		Animal &operator=(Animal other);
-		void swap(Animal &first, Animal &second);
+		WrongAnimal &operator=(WrongAnimal other);
+		void swap(WrongAnimal &first, WrongAnimal &second);
 
 		// Getters
 		std::string get_type() const;
@@ -48,8 +48,8 @@ class Animal {
 		void set_type(std::string type);
 
 		// Functions
-		virtual void makeSound() const;
-		// virtual means can be defined in derived class, can work without defining in Animal.cpp
+		void makeSound() const;
+		// virtual means can be defined in derived class, can work without defining in WrongAnimal.cpp
 
 	protected:
 		std::string type_;
