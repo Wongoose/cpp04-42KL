@@ -31,6 +31,7 @@ Cat::~Cat() {
 
 void Cat::swap(Cat &first, Cat &second) {
 	std::swap(first.type_, second.type_);
+	std::swap(first.brain_, second.brain_);
 }
 
 Cat &Cat::operator=(Cat other) {
@@ -41,4 +42,28 @@ Cat &Cat::operator=(Cat other) {
 
 void Cat::makeSound() const {
 	std::cout << this->type_ << " is MEOWING: MEOOOWWWWW!" << std::endl;
+}
+
+void Cat::print_ideas(int num) const {
+
+	std::cout << "Cat " << num << "'s" << " ideas:" << std::endl;	
+	int i = 0;
+
+	while (i < 100 && !this->brain_->get_idea(i).empty()) {
+		std::cout << i << ": " << this->brain_->get_idea(i) << std::endl;
+		i++;
+	}
+}
+
+void Cat::set_idea(std::string idea) {
+	int i = 0;
+
+	while (i < 100 && !this->brain_->get_idea(i).empty())
+		i++;
+
+	if (i > 99) {
+		std::cout << "Cat's brain is FULL! Can't set ideas." << std::endl;
+		return;
+	}
+	this->brain_->set_idea(i, idea);
 }

@@ -21,7 +21,7 @@ Dog::Dog() {
 Dog::Dog(const Dog &copy) {
 	std::cout << "Dog: Copy constructor called" << std::endl;
 	this->type_ = copy.get_type();
-	this->brain_ = new Brain(*copy.brain_);
+	this->brain_ = new Brain(*copy.brain_); // this makes a deep copy, different pointers to memory
 }
 
 Dog::~Dog() {
@@ -31,6 +31,7 @@ Dog::~Dog() {
 
 void Dog::swap(Dog &first, Dog &second) {
 	std::swap(first.type_, second.type_);
+	std::swap(first.brain_, second.brain_);
 }
 
 Dog &Dog::operator=(Dog other) {
@@ -41,4 +42,29 @@ Dog &Dog::operator=(Dog other) {
 
 void Dog::makeSound() const {
 	std::cout << this->type_ << " is BARKING: WOOF WOOF!" << std::endl;
+}
+
+void Dog::print_ideas(int num) const {
+
+	std::cout << "Dog " << num << "'s" << " ideas:" << std::endl;
+
+	int i = 0;
+
+	while (i < 100 && !this->brain_->get_idea(i).empty()) {
+		std::cout << i << ": " << this->brain_->get_idea(i) << std::endl;
+		i++;
+	}
+}
+
+void Dog::set_idea(std::string idea) {
+	int i = 0;
+
+	while (i < 100 && !this->brain_->get_idea(i).empty())
+		i++;
+
+	if (i > 99) {
+		std::cout << "Dog's brain is FULL! Can't set ideas." << std::endl;
+		return;
+	}
+	this->brain_->set_idea(i, idea);
 }

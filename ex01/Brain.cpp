@@ -20,6 +20,7 @@ Brain::Brain() {
 Brain::Brain(const Brain &copy) {
 	std::cout << "Brain: Copy constructor called" << std::endl;
 	if (!copy.ideas_) return;
+	this->ideas_ = new std::string[100];
 	for (int i = 0; i < 100; i++) {
 		this->ideas_[i] = copy.ideas_[i];
 	}

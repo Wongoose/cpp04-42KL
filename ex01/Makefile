@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = brainz
+NAME = 100brainz
 COMPILER = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 

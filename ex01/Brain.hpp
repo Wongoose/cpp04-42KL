@@ -34,7 +34,7 @@ class Brain {
 		Brain(const Brain &copy);
 
 		// Destructor
-		virtual ~Brain();
+		~Brain();
 
 		// Operators
 		Brain &operator=(Brain other);
