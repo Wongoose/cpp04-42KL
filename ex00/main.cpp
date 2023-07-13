@@ -6,7 +6,7 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:57:25 by zwong             #+#    #+#             */
-/*   Updated: 2023/05/26 16:57:33 by zwong            ###   ########.fr       */
+/*   Updated: 2023/07/13 13:54:57 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,15 @@ int main(void) {
                "class function ---"
             << std::endl
             << std::endl;
-	const WrongAnimal *meta3 = new WrongAnimal();
-	const WrongAnimal *i3 = new WrongCat();
-	std::cout << "Hi I am " << meta3->get_type() << " " << std::endl;
-	std::cout << "Hi I am " << i3->get_type() << " " << std::endl;
-	meta3->makeSound();
-	i3->makeSound();  // makes WrongAnimal sound because makeSound in WrongAnimal
+	const WrongAnimal *wrongAnimal = new WrongAnimal();
+	const WrongAnimal *wrongCat = new WrongCat();
+	std::cout << "Hi I am " << wrongAnimal->get_type() << " " << std::endl;
+	std::cout << "Hi I am " << wrongCat->get_type() << " " << std::endl;
+	wrongAnimal->makeSound();
+	wrongCat->makeSound();  // makes WrongAnimal sound because makeSound in WrongAnimal
 						// is not virtual
-	delete meta3;
-	delete i3;  // also, only calls one destructor, because destructor of
+	delete wrongAnimal;
+	delete wrongCat;  // also, only calls one destructor, because destructor of
 				// WrongAnimal is not virtual
 
 	return (0);
