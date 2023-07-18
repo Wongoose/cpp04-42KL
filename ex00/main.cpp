@@ -6,7 +6,7 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:57:25 by zwong             #+#    #+#             */
-/*   Updated: 2023/07/13 13:54:57 by zwong            ###   ########.fr       */
+/*   Updated: 2023/07/18 11:05:03 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "Cat.hpp"
 #include "WrongCat.hpp"
 
+// Objective: derived class with virtual keyword (else, derived class won't be able to override attributes properly)
 int main(void) {
 	std::cout << YELLOW
 				<< "--- Project pdf: derived class overrides base class method ---"

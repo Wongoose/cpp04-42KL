@@ -6,11 +6,11 @@
 #    By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/26 12:53:31 by zwong             #+#    #+#              #
-#    Updated: 2023/07/13 13:55:56 by zwong            ###   ########.fr        #
+#    Updated: 2023/07/18 11:09:12 by zwong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = 100brainz
+NAME = abstract
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 

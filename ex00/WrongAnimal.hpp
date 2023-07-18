@@ -6,7 +6,7 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:57:29 by zwong             #+#    #+#             */
-/*   Updated: 2023/05/26 16:57:33 by zwong            ###   ########.fr       */
+/*   Updated: 2023/07/18 11:03:19 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 #define BLUE "\033[94m"
 #define MAGENTA "\033[35m"
 
+// Wrong because destructor and functions is not virtual (hence derived class cannot override definition)
 class WrongAnimal {
 	public:
 		// Constructors

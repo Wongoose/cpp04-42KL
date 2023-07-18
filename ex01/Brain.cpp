@@ -6,7 +6,7 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 17:44:47 by zwong             #+#    #+#             */
-/*   Updated: 2023/05/26 17:45:02 by zwong            ###   ########.fr       */
+/*   Updated: 2023/07/18 11:08:35 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ Brain::Brain() {
 	ideas_ = new std::string[100];
 }
 
+// Main lesson is here, copy constructor in Brain()
 Brain::Brain(const Brain &copy) {
 	std::cout << "Brain: Copy constructor called" << std::endl;
 	if (!copy.ideas_) return;

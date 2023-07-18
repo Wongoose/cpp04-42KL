@@ -27,6 +27,7 @@
 #define BLUE "\033[94m"
 #define MAGENTA "\033[35m"
 
+// Notice a few keywords "AAnimal" and "virtual" "=0"
 class AAnimal {
 	public:
 		// Constructors
@@ -48,7 +49,7 @@ class AAnimal {
 
 		// Functions
 		virtual void makeSound() const = 0; // "=0" makes it a pure virtual function (ABSTRACT class)
-		// virtual means can be defined in derived class, can work without defining in AAnimal.cpp
+		// pure virtual means cannot work in base class, must be defined in a derived class. (abstract means imaginary)
 
 	protected:
 		std::string type_;

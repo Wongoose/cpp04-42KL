@@ -6,7 +6,7 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 17:44:51 by zwong             #+#    #+#             */
-/*   Updated: 2023/05/26 17:45:02 by zwong            ###   ########.fr       */
+/*   Updated: 2023/07/18 11:07:50 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "Cat.hpp"
 
 // Learning objective is shallow vs deep copy for memory allocated attributes (e.g. *brain_)
+// During copy contructors, "brain" should be copied by values, not the memory location
 int main(void) {
 	std::cout << std::endl << "--- PDF: ---" << std::endl << std::endl;
 	Dog *dog = new Dog();
